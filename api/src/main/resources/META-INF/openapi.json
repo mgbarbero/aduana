@@ -1,0 +1,75 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "Consorcio",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/location": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/location"
+                                    }
+                                }
+                            }
+                        },
+                        "description": "ok"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "location": {
+                "title": "Root Type for location",
+                "description": "",
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "format": "int32",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "location": {
+                        "type": "object",
+                        "properties": {
+                            "lat": {
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "lng": {
+                                "format": "double",
+                                "type": "number"
+                            }
+                        }
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                },
+                "example": {
+                    "id": 1,
+                    "name": "International Inc Corporate Office",
+                    "location": {
+                        "lat": 51.5013673,
+                        "lng": -0.1440787
+                    },
+                    "type": "headquarter",
+                    "status": "1"
+                }
+            }
+        }
+    }
+}
